@@ -1,14 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body class=bg-blue-100>
-    <div class="min-h-screen container mx-auto">
+    <div class="min-h-screen container mx-auto" data-aos="fade-up-right">
       <!-- phần header -->
       <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -16,11 +17,13 @@
             <img src="{{url_for('static',filename='images/Logo.png')}}" class="object-cover w-24 h-24 rounded-full" alt="">
             <span class="ml-3 text-xl">Nhân Nguyễn</span>
           </a>
-          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center" position: fixed>
             <a href="/" class="mr-5 hover:text-gray-900">Home</a>
-            <a href="/about" class="mr-5 hover:text-gray-900">Thông tin tác giả</a>
-            <a class="mr-5 hover:text-gray-900">Dự án</a>
-            <a class="mr-5 hover:text-gray-900">Thông tin liên hệ</a>
+            <a href="/about" class="mr-5 hover:text-gray-900"">Thông tin tác giả</a>
+            <a class="mr-5 hover:text-gray-900" href="#skills">Kĩ năng</a>
+            <a class="mr-5 hover:text-gray-900" href="#projects">Dự án</a>
+            <a class="mr-5 hover:text-gray-900" href="#memories"">Kỉ niệm</a>
+            <a class="mr-5 hover:text-gray-900" href="#lienhe">Thông tin liên hệ</a>
           </nav>
           <button
             class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
@@ -55,8 +58,7 @@
           <a
             class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
+            <img src="{{url_for('static',filename='images/Logo.png')}}" class="object-cover w-24 h-24 rounded-full" alt=""
               fill="none"
               stroke="currentColor"
               stroke-linecap="round"
@@ -152,5 +154,10 @@
       </footer>
       <!-- hết phần footer -->
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
+
